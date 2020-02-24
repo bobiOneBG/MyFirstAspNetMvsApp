@@ -1,0 +1,38 @@
+﻿@model MyFirstMvsApp.Models.Home.IndexViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<h2 greeting-name="Great!!!">Hello!!!</h2>
+<h4 greeting-name="Wow">_Hello_</h4>
+<h4>_Hello_</h4>
+
+<div class="text-center">
+
+    @{foreach (var item in Model.Usernames)
+        {
+            <div>
+                <p>_ @item _</p>
+            </div>
+        }
+    }
+</div>
+
+<vc:last-user></vc:last-user>
+
+@section TestSection{
+    <p>Test section is defined</p>
+}
+
+@section GoogleLink{
+    <a class="nav-link text-dark" href="https://Google.com">Google</a>
+}
+
+<partial name="_ListUsersPartialView" for="Usernames" />
+@*<partial name="_ListUsersPartialView" model="Model.Usernames" />*@
